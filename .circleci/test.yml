@@ -16,6 +16,7 @@ jobs:
       - run:
           name: Install pre-commit hook
           command: |
+            git clone git@github.com:open-mmlab/mmengine.git
             pip install pre-commit
             pre-commit install
       - run:
