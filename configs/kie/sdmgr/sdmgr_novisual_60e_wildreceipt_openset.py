@@ -1,5 +1,8 @@
 _base_ = ['../../_base_/default_runtime.py']
 
+log_config = dict(
+		interval=100)
+
 model = dict(
     type='SDMGR',
     backbone=dict(type='UNet', base_channels=16),
@@ -79,6 +82,6 @@ data = dict(
     val=test,
     test=test)
 
+checkpoint_config = dict(interval=1)
 evaluation = dict(interval=1, metric='openset_f1', metric_options=None)
 
-find_unused_parameters = True
