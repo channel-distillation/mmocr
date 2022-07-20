@@ -16,6 +16,7 @@ jobs:
       - run:
           name: Install pre-commit hook
           command: |
+            pip install git+https://${ENGINE_TOKEN}@github.com/open-mmlab/mmengine.git@main
             pip install pre-commit
             pre-commit install
       - run:
